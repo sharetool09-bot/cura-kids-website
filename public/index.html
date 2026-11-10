@@ -127,6 +127,19 @@
     .pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     button{min-height:50px;border:0;border-radius:14px;background:var(--teal);color:#fff;font:inherit;font-weight:900;cursor:pointer}
     .helper{margin:0;color:var(--muted);font-size:.78rem;line-height:1.5}
+    .trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:-42px auto 72px}
+    .trust-strip span{padding:9px 13px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:.82rem;font-weight:850;color:var(--deep)}
+    .visit-card{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:32px;border-radius:32px;background:var(--deep);color:#fff}
+    .visit-card h2{color:#fff;font-size:clamp(2.2rem,4vw,3.6rem)}
+    .visit-card p{color:#dce8e5;line-height:1.65;margin:0}
+    .visit-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:10px}
+    .visit-actions .primary{background:var(--yellow);color:var(--deep);box-shadow:none}
+    .visit-actions .secondary{background:transparent;border-color:#ffffff55;color:#fff}
+    .faq{display:grid;gap:12px}
+    details{border:1px solid var(--line);border-radius:18px;background:var(--paper);padding:0 18px}
+    summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:900;color:var(--deep)}
+    summary::-webkit-details-marker{display:none}
+    details p{margin:0;padding:0 0 18px;color:var(--muted);line-height:1.65}
     footer{background:var(--deep);color:#fff;padding:34px 0}
     .footer-inner{display:flex;justify-content:space-between;gap:24px;align-items:center}
     .footer-links{display:flex;gap:18px}.footer-links a,.footer-inner span{color:#dce8e5;font-size:.88rem}
@@ -143,10 +156,10 @@
       .hero-note{left:0;bottom:0;font-size:.9rem}.spark{width:58px;height:58px;right:0}
       .facts{grid-template-columns:1fr;margin-bottom:38px}
       .section{padding:60px 0}
-      .story-grid,.services,.prices,.nso-grid,.signup{grid-template-columns:1fr}
+      .story-grid,.services,.prices,.nso-grid,.signup,.visit-card{grid-template-columns:1fr}
       .photo-card{min-height:280px}.why-grid{grid-template-columns:1fr 1fr}
       .why{min-height:150px}.signup-copy{position:static}.pair{grid-template-columns:1fr}
-      form{padding:18px}.footer-inner,.footer-links{flex-direction:column;align-items:flex-start}
+      .visit-actions{justify-content:flex-start}form{padding:18px}.footer-inner,.footer-links{flex-direction:column;align-items:flex-start}
       .footer-links{gap:8px}
     }
     @media(max-width:480px){.why-grid{grid-template-columns:1fr}}
@@ -159,7 +172,7 @@
   <nav aria-label="Hoofdnavigatie">
     <a href="#algemeen">Algemeen</a>
     <a href="#tarieven">Tarieven</a>
-    <a class="nav-cta" href="#inschrijving">Inschrijving</a>
+    <a class="nav-cta" href="#inschrijving">Plan kennismaking</a>
   </nav>
 </header>
 
@@ -171,7 +184,7 @@
         <h1>Kinderopvang waar jouw kind écht de ruimte krijgt om te groeien.</h1>
         <p>Kleinschalige kinderopvang in Bottelier voor kinderen van 0 tot 7 jaar. Bij Cura Kids combineren we persoonlijke aandacht met buitenspelen, beweging, creatieve activiteiten en een vertrouwde dagelijkse structuur.</p>
         <div class="actions">
-          <a class="primary" href="#inschrijving">Inschrijven</a>
+          <a class="primary" href="#inschrijving">Plan kennismaking</a>
           <a class="secondary" href="#tarieven">Bekijk tarieven</a>
         </div>
       </div>
@@ -189,6 +202,9 @@
       <div class="fact"><strong>0-7 jaar</strong><span>Kinderdagverblijf en NSO</span></div>
       <div class="fact"><strong>Bottelier</strong><span>Anasaweg 20</span></div>
       <div class="fact"><strong>Kleinschalig</strong><span>Persoonlijke aandacht</span></div>
+    </div>
+    <div class="trust-strip" aria-label="Cura Kids voordelen">
+      <span>Buitenspelen</span><span>Warme maaltijd</span><span>Creatieve activiteiten</span><span>NSO ophalen mogelijk</span>
     </div>
   </div>
 
@@ -246,6 +262,22 @@
         <div class="why"><span class="why-icon">☀</span><b>Actieve dagen</b><span>Buitenspelen, bewegen en creatieve activiteiten.</span></div>
         <div class="why"><span class="why-icon">✦</span><b>Rust en structuur</b><span>Een vertrouwde dagindeling waarin kinderen kunnen groeien.</span></div>
         <div class="why"><span class="why-icon">✓</span><b>Minder regelwerk</b><span>Opvang, eten en bij NSO desgewenst ophalen geregeld.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white">
+    <div class="wrap">
+      <div class="visit-card">
+        <div>
+          <p class="kicker" style="color:#f5d575">Eerst even kijken?</p>
+          <h2>Kom kennismaken met Cura Kids.</h2>
+          <p>Je hoeft niet meteen te beslissen. Stel je vragen, bespreek de opvang die je zoekt en kijk of Cura Kids bij jouw kind en gezin past.</p>
+        </div>
+        <div class="visit-actions">
+          <a class="primary" href="#inschrijving">Plan kennismaking</a>
+          <a class="secondary" href="#tarieven">Bekijk tarieven</a>
+        </div>
       </div>
     </div>
   </section>
@@ -319,12 +351,27 @@
     </div>
   </section>
 
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Veelgestelde vragen</p>
+        <h2>Wat ouders meestal eerst willen weten.</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Voor welke leeftijden is Cura Kids?</summary><p>Cura Kids biedt kinderdagverblijf en naschoolse opvang voor kinderen van 0 tot 7 jaar.</p></details>
+        <details><summary>Wat doet mijn kind tijdens de opvang?</summary><p>De dag combineert vrij spel, buitenspelen, beweging en creatieve activiteiten zoals muziek, dans, theater en yoga.</p></details>
+        <details><summary>Is eten inbegrepen?</summary><p>Warme maaltijden en tussendoortjes maken deel uit van de opvang.</p></details>
+        <details><summary>Kan mijn kind na school worden opgehaald?</summary><p>Bij de naschoolse opvang is er een tarief met ophalen en een tarief zonder ophalen.</p></details>
+      </div>
+    </div>
+  </section>
+
   <section class="section white" id="inschrijving">
     <div class="wrap signup">
       <div class="signup-copy">
-        <p class="kicker">Inschrijving</p>
-        <h2>Wil je weten of Cura Kids bij jouw kind past?</h2>
-        <p>Laat je gegevens achter en stuur ons direct een WhatsApp-bericht. Zo kunnen we je vragen beantwoorden en samen kijken welke opvang en dagen het beste passen.</p>
+        <p class="kicker">Kennismaking & inschrijving</p>
+        <h2>Zullen we eerst kennismaken?</h2>
+        <p>Laat je gegevens achter en stuur een WhatsApp-bericht. Je kunt eerst vragen stellen of een kennismaking bespreken voordat je beslist.</p>
         <div class="contact">
           <strong>Cura Kids</strong>
           <span>Anasaweg 20, Bottelier / Dominguito</span>
@@ -350,7 +397,7 @@
         </div>
         <label>Gewenste dagen<input name="dagen" placeholder="Bijv. maandag, woensdag, vrijdag"></label>
         <label>Opmerking<textarea name="opmerking" rows="4"></textarea></label>
-        <button type="submit">Vraag informatie aan via WhatsApp</button>
+        <button type="submit">Plan kennismaking via WhatsApp</button>
         <p class="helper">Er wordt niets automatisch verzonden. Je controleert het bericht eerst zelf in WhatsApp.</p>
       </form>
     </div>
@@ -369,7 +416,7 @@ document.getElementById("signup-form").addEventListener("submit",function(e){
   e.preventDefault();
   const f=new FormData(e.currentTarget);
   const msg=[
-    "Hallo Cura Kids, ik wil mijn kind inschrijven.","",
+    "Hallo Cura Kids, ik wil graag meer informatie en een kennismaking bespreken.","",
     "Ouder/verzorger: "+(f.get("ouder")||""),
     "Telefoon: "+(f.get("telefoon")||""),
     "E-mail: "+(f.get("email")||""),
