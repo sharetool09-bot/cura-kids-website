@@ -6,6 +6,25 @@
   <title>Cura Kids | Kinderopvang op Curaçao</title>
   <meta name="description" content="Kleinschalige kinderopvang in Bottelier, Curaçao. Bekijk algemene informatie, tarieven en inschrijving.">
   <meta name="theme-color" content="#fbf6ec">
+  <meta property="og:title" content="Cura Kids | Kleinschalige kinderopvang in Bottelier">
+  <meta property="og:description" content="Kinderdagverblijf en naschoolse opvang voor kinderen van 0 tot 7 jaar, met persoonlijke aandacht, beweging en creatieve activiteiten.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ChildCare",
+    "name":"Cura Kids",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Anasaweg 20",
+      "addressLocality":"Bottelier",
+      "addressCountry":"CW"
+    },
+    "telephone":"+59996882965",
+    "email":"info@cura-kids.com"
+  }
+  </script>
   <style>
     :root{
       --sand:#fbf6ec;--paper:#fffdf8;--ink:#23312f;--deep:#184843;
@@ -140,6 +159,13 @@
     summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:900;color:var(--deep)}
     summary::-webkit-details-marker{display:none}
     details p{margin:0;padding:0 0 18px;color:var(--muted);line-height:1.65}
+    .microcopy{margin:12px 0 0!important;font-size:.82rem!important;line-height:1.45!important;color:var(--muted)!important}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .step{padding:24px;border-radius:24px;background:var(--paper);border:1px solid var(--line)}
+    .step-num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;margin-bottom:16px;background:var(--deep);color:white;font-weight:900}
+    .step h3{margin:0 0 8px;color:var(--deep);font-size:1.22rem}
+    .step p{margin:0;color:var(--muted);line-height:1.6;font-size:.92rem}
+    .mobile-cta{display:none}
     footer{background:var(--deep);color:#fff;padding:34px 0}
     .footer-inner{display:flex;justify-content:space-between;gap:24px;align-items:center}
     .footer-links{display:flex;gap:18px}.footer-links a,.footer-inner span{color:#dce8e5;font-size:.88rem}
@@ -156,11 +182,16 @@
       .hero-note{left:0;bottom:0;font-size:.9rem}.spark{width:58px;height:58px;right:0}
       .facts{grid-template-columns:1fr;margin-bottom:38px}
       .section{padding:60px 0}
-      .story-grid,.services,.prices,.nso-grid,.signup,.visit-card{grid-template-columns:1fr}
+      .story-grid,.services,.prices,.nso-grid,.signup,.visit-card,.steps{grid-template-columns:1fr}
       .photo-card{min-height:280px}.why-grid{grid-template-columns:1fr 1fr}
       .why{min-height:150px}.signup-copy{position:static}.pair{grid-template-columns:1fr}
       .visit-actions{justify-content:flex-start}form{padding:18px}.footer-inner,.footer-links{flex-direction:column;align-items:flex-start}
       .footer-links{gap:8px}
+      body{padding-bottom:78px}
+      .mobile-cta{position:fixed;left:10px;right:10px;bottom:10px;z-index:40;display:flex;gap:8px;padding:8px;border-radius:18px;background:rgba(255,253,248,.96);backdrop-filter:blur(12px);box-shadow:0 12px 35px rgba(35,49,47,.18);border:1px solid var(--line)}
+      .mobile-cta a{flex:1;min-height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;font-weight:900;font-size:.88rem}
+      .mobile-cta .chat{background:var(--teal);color:#fff}
+      .mobile-cta .prices-link{background:var(--mint);color:var(--deep)}
     }
     @media(max-width:480px){.why-grid{grid-template-columns:1fr}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -187,6 +218,7 @@
           <a class="primary" href="#inschrijving">Plan kennismaking</a>
           <a class="secondary" href="#tarieven">Bekijk tarieven</a>
         </div>
+        <p class="microcopy">Vrijblijvend kennismaken. Eerst vragen stellen mag natuurlijk ook.</p>
       </div>
 
       <div class="hero-visual">
@@ -278,6 +310,20 @@
           <a class="primary" href="#inschrijving">Plan kennismaking</a>
           <a class="secondary" href="#tarieven">Bekijk tarieven</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Zo werkt het</p>
+        <h2>In drie simpele stappen.</h2>
+      </div>
+      <div class="steps">
+        <article class="step"><div class="step-num">1</div><h3>Stuur een bericht</h3><p>Vertel kort welke opvang je zoekt en voor welke leeftijd.</p></article>
+        <article class="step"><div class="step-num">2</div><h3>Maak kennis</h3><p>Bespreek je vragen en kijk of Cura Kids goed voelt voor jouw gezin.</p></article>
+        <article class="step"><div class="step-num">3</div><h3>Kies wat past</h3><p>Kies daarna rustig de opvang en dagen die bij jullie week passen.</p></article>
       </div>
     </div>
   </section>
@@ -381,6 +427,14 @@
       </div>
 
       <form id="signup-form">
+        <label>Waar kunnen we mee helpen?
+          <select required name="doel">
+            <option value="">Kies een optie</option>
+            <option>Ik wil kennismaken</option>
+            <option>Ik heb eerst een vraag</option>
+            <option>Ik wil inschrijven</option>
+          </select>
+        </label>
         <label>Naam ouder / verzorger<input required name="ouder" autocomplete="name"></label>
         <label>Telefoonnummer<input required name="telefoon" inputmode="tel" autocomplete="tel"></label>
         <label>E-mailadres<input name="email" type="email" autocomplete="email"></label>
@@ -404,6 +458,11 @@
   </section>
 </main>
 
+<div class="mobile-cta" aria-label="Snelle acties">
+  <a class="prices-link" href="#tarieven">Tarieven</a>
+  <a class="chat" href="#inschrijving">Kennismaken</a>
+</div>
+
 <footer>
   <div class="wrap footer-inner">
     <div><strong>Cura Kids</strong><span>Kleinschalige kinderopvang op Curaçao</span></div>
@@ -417,6 +476,7 @@ document.getElementById("signup-form").addEventListener("submit",function(e){
   const f=new FormData(e.currentTarget);
   const msg=[
     "Hallo Cura Kids, ik wil graag meer informatie en een kennismaking bespreken.","",
+    "Doel: "+(f.get("doel")||""),
     "Ouder/verzorger: "+(f.get("ouder")||""),
     "Telefoon: "+(f.get("telefoon")||""),
     "E-mail: "+(f.get("email")||""),
