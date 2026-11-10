@@ -94,6 +94,9 @@
       box-shadow:0 14px 28px rgba(35,49,47,.13);transform:rotate(-4deg)
     }
     .spark{position:absolute;right:5px;top:0;width:78px;height:78px;background:var(--coral);clip-path:polygon(50% 0,61% 36%,100% 25%,68% 50%,100% 75%,61% 64%,50% 100%,39% 64%,0 75%,32% 50%,0 25%,39% 36%)}
+    .hero-doodle{position:absolute;z-index:3;font-weight:900;pointer-events:none}
+    .doodle-one{left:8px;top:18px;font-size:2rem;color:var(--teal);transform:rotate(-16deg)}
+    .doodle-two{right:82px;bottom:10px;font-size:2.2rem;color:var(--yellow);animation:spinSlow 12s linear infinite}
     .facts{
       display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:74px
     }
@@ -102,13 +105,16 @@
     .fact:nth-child(1){background:var(--mint)}.fact:nth-child(2){background:var(--sky)}.fact:nth-child(3){background:var(--peach)}
     .fact strong{display:block;font-size:1.1rem;color:var(--deep)}.fact span{font-size:.87rem;color:var(--muted)}
     section{scroll-margin-top:100px}
-    .section{padding:82px 0}
+    .section{padding:92px 0;position:relative}
+    .wave-top{position:relative}
+    .wave-top:before{content:"";position:absolute;left:0;right:0;top:-42px;height:54px;background:inherit;clip-path:polygon(0 58%,7% 46%,15% 55%,24% 39%,34% 49%,43% 34%,54% 48%,64% 36%,74% 51%,84% 40%,93% 54%,100% 46%,100% 100%,0 100%);z-index:1}
     .section.white{background:var(--paper)}
     .section.soft-sky{background:linear-gradient(180deg,#eef7f9 0%,#e8f4f3 100%)}
     .section.soft-peach{background:linear-gradient(180deg,#fff7f1 0%,#fdf0e8 100%)}
     .section-head{max-width:760px;margin-bottom:34px}
     .kicker{margin:0 0 10px;color:var(--teal);font-size:.8rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
-    h2{margin:0 0 12px;font-size:clamp(2.5rem,5vw,4.5rem);line-height:.98;letter-spacing:-.06em;color:var(--deep)}
+    h2{margin:0 0 12px;font-size:clamp(2.5rem,5vw,4.7rem);line-height:.96;letter-spacing:-.065em;color:var(--deep)}
+    .section-head h2{max-width:900px}
     .section-head>p{margin:0;color:var(--muted);line-height:1.7;font-size:1.03rem}
     .story-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:center}
     .story{
@@ -118,11 +124,14 @@
     .story h3,.service h3,.price-card h3,.signup-copy h3{margin:0 0 10px;font-size:1.7rem;letter-spacing:-.04em;color:var(--deep)}
     .story p,.service p{color:var(--muted);line-height:1.7}
     .story ul{padding-left:1.2rem;line-height:1.95}
-    .photo-card{position:relative;overflow:hidden;border-radius:34px;background:var(--sky);min-height:390px}
+    .photo-card{position:relative;overflow:hidden;border-radius:34px 34px 110px 34px;background:var(--sky);min-height:430px;box-shadow:var(--shadow)}
+    .photo-card:before{content:"☀";position:absolute;z-index:2;left:18px;top:14px;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);color:var(--deep);font-size:1.5rem;transform:rotate(-10deg)}
     .photo-card img{width:100%;height:100%;object-fit:cover}
     .photo-sticker{position:absolute;right:18px;bottom:18px;padding:12px 16px;border-radius:18px;background:var(--paper);font-weight:900;color:var(--deep);transform:rotate(2deg)}
-    .services{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
-    .service{padding:28px;border-radius:34px 20px 34px 20px;border:1px solid var(--line);background:var(--paper);position:relative}
+    .services{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;margin-top:30px;align-items:stretch}
+    .service{padding:30px;border-radius:34px 20px 34px 20px;border:1px solid var(--line);background:var(--paper);position:relative;overflow:hidden}
+    .service:after{content:"";position:absolute;width:86px;height:86px;border-radius:50%;right:-28px;bottom:-28px;background:rgba(245,213,117,.28)}
+    .service:nth-child(2):after{background:rgba(239,143,126,.20)}
     .service:nth-child(2){border-radius:20px 34px 20px 34px}
     .service:nth-child(1){box-shadow:inset 0 6px 0 var(--yellow)}.service:nth-child(2){box-shadow:inset 0 6px 0 var(--coral)}
     .service .mini{font-size:.76rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
@@ -133,7 +142,7 @@
     .why b{font-size:1.2rem;color:var(--deep)}.why span{font-size:.9rem;line-height:1.5;color:#42514e}
     .why-icon{font-size:1.55rem}
     .prices{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .price-card,.nso{padding:26px;border-radius:30px;border:1px solid var(--line);background:var(--paper)}
+    .price-card,.nso{padding:28px;border-radius:34px;border:1px solid var(--line);background:var(--paper);box-shadow:0 14px 34px rgba(35,49,47,.06)}
     .price-card:nth-child(1){box-shadow:inset 0 7px 0 var(--yellow)}
     .price-card:nth-child(2){box-shadow:inset 0 7px 0 var(--sky)}
     .price-label{margin:0 0 8px;font-size:.76rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
@@ -163,14 +172,15 @@
     .helper{margin:0;color:var(--muted);font-size:.78rem;line-height:1.5}
     .trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:-42px auto 72px}
     .trust-strip span{padding:9px 13px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:.82rem;font-weight:850;color:var(--deep)}
-    .visit-card{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:36px;border-radius:42px 22px 42px 22px;background:var(--deep);color:#fff;position:relative;overflow:hidden}
+    .visit-card{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:42px;border-radius:54px 24px 54px 24px;background:linear-gradient(135deg,var(--deep),#236c64);color:#fff;position:relative;overflow:hidden}
+    .visit-card:before{content:"✦";position:absolute;left:24px;bottom:18px;font-size:2rem;color:var(--yellow);transform:rotate(-12deg)}
     .visit-card:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(245,213,117,.14);right:-60px;top:-70px}
     .visit-card h2{color:#fff;font-size:clamp(2.2rem,4vw,3.6rem)}
     .visit-card p{color:#dce8e5;line-height:1.65;margin:0}
     .visit-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:10px}
     .visit-actions .primary{background:var(--yellow);color:var(--deep);box-shadow:none}
     .visit-actions .secondary{background:transparent;border-color:#ffffff55;color:#fff}
-    .faq{display:grid;gap:12px}
+    .faq{display:grid;gap:12px;max-width:900px}
     details{border:1px solid var(--line);border-radius:18px;background:var(--paper);padding:0 18px}
     summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:900;color:var(--deep)}
     summary::-webkit-details-marker{display:none}
@@ -202,9 +212,16 @@
     .editorial-num{font-size:2.4rem;line-height:1;font-weight:950;color:var(--coral);letter-spacing:-.08em}
     .editorial-item h3{margin:0 0 8px;color:var(--deep);font-size:1.45rem;letter-spacing:-.04em}
     .editorial-item p{margin:0;color:var(--muted);line-height:1.65;max-width:620px}
-    .dayline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:34px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .daybeat{padding:28px 22px;position:relative}
-    .daybeat:not(:last-child){border-right:1px solid var(--line)}
+    .editorial-item:nth-child(odd){transform:translateX(24px)}
+    .editorial-item:nth-child(even){transform:translateX(-6px)}
+    .dayline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px;border:0}
+    .daybeat{padding:28px 22px;position:relative;border-radius:28px;background:var(--paper);box-shadow:0 12px 28px rgba(35,49,47,.06);overflow:hidden}
+    .daybeat:nth-child(1){background:#fff7cf;transform:rotate(-1deg)}
+    .daybeat:nth-child(2){background:#e8f5fb;transform:rotate(1deg)}
+    .daybeat:nth-child(3){background:#ffeae1;transform:rotate(-.6deg)}
+    .daybeat:nth-child(4){background:#e7f3ed;transform:rotate(.8deg)}
+    .daybeat:after{content:"";position:absolute;width:42px;height:42px;border:3px solid rgba(24,72,67,.13);border-radius:50%;right:-10px;top:-10px}
+    .daybeat:not(:last-child){border-right:0}
     .daybeat small{display:block;margin-bottom:26px;font-size:.75rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
     .daybeat b{display:block;margin-bottom:8px;color:var(--deep);font-size:1.18rem}
     .daybeat p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.55}
@@ -261,6 +278,7 @@
     @keyframes floatSoft{0%,100%{transform:translateY(0) rotate(1deg)}50%{transform:translateY(-10px) rotate(-1deg)}}
     @keyframes floatSoft2{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(8px) rotate(2deg)}}
     @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @keyframes spinSlow{from{transform:rotate(0)}to{transform:rotate(360deg)}}
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
       *,*:before,*:after{animation:none!important;transition:none!important}
@@ -300,6 +318,8 @@
         </div>
         <div class="hero-badge float-soft-2">0–7 jaar<br>in Bottelier</div>
         <div class="hero-note float-soft">Kinderdagverblijf en naschoolse opvang met persoonlijke aandacht.</div>
+        <div class="hero-doodle doodle-one" aria-hidden="true">✎</div>
+        <div class="hero-doodle doodle-two" aria-hidden="true">☀</div>
       </div>
     </section>
 
@@ -321,7 +341,7 @@
     </div>
   </div>
 
-  <section class="section white">
+  <section class="section white wave-top">
     <div class="wrap">
       <div class="section-head">
         <p class="kicker">Algemeen</p>
@@ -362,7 +382,7 @@
     </div>
   </section>
 
-  <section class="section soft-sky">
+  <section class="section soft-sky wave-top">
     <div class="wrap editorial">
       <div class="editorial-title reveal">
         <p class="kicker">Waarom Cura Kids</p>
@@ -390,7 +410,7 @@
     </div>
   </section>
 
-  <section class="section soft-peach">
+  <section class="section soft-peach wave-top">
     <div class="wrap">
       <div class="section-head reveal">
         <p class="kicker">Een dag bij Cura Kids</p>
