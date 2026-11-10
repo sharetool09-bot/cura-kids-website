@@ -110,7 +110,7 @@
     .kicker{margin:0 0 10px;color:var(--teal);font-size:.8rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
     h2{margin:0 0 12px;font-size:clamp(2.5rem,5vw,4.5rem);line-height:.98;letter-spacing:-.06em;color:var(--deep)}
     .section-head>p{margin:0;color:var(--muted);line-height:1.7;font-size:1.03rem}
-    .story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
+    .story-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:center}
     .story{
       position:relative;padding:34px;border-radius:34px;background:var(--mint);overflow:hidden
     }
@@ -189,6 +189,26 @@
     .contact-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 14px;border-radius:999px;font-size:.86rem;font-weight:900}
     .contact-actions .wa{background:var(--yellow);color:var(--deep)}
     .contact-actions .call{border:1px solid #ffffff55;color:#fff}
+    .identity-band{overflow:hidden;background:var(--deep);color:#fff;padding:18px 0;border-radius:0}
+    .identity-track{display:flex;gap:44px;width:max-content;animation:marquee 24s linear infinite;font-weight:950;letter-spacing:-.03em;font-size:clamp(1.2rem,2vw,1.65rem)}
+    .identity-track span{display:inline-flex;align-items:center;gap:18px;white-space:nowrap}
+    .identity-track i{font-style:normal;color:var(--yellow)}
+    .editorial{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+    .editorial-title{position:sticky;top:120px}
+    .editorial-title h2{max-width:470px}
+    .editorial-list{display:grid}
+    .editorial-item{display:grid;grid-template-columns:90px 1fr;gap:22px;padding:30px 0;border-top:1px solid rgba(24,72,67,.16)}
+    .editorial-item:last-child{border-bottom:1px solid rgba(24,72,67,.16)}
+    .editorial-num{font-size:2.4rem;line-height:1;font-weight:950;color:var(--coral);letter-spacing:-.08em}
+    .editorial-item h3{margin:0 0 8px;color:var(--deep);font-size:1.45rem;letter-spacing:-.04em}
+    .editorial-item p{margin:0;color:var(--muted);line-height:1.65;max-width:620px}
+    .dayline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:34px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .daybeat{padding:28px 22px;position:relative}
+    .daybeat:not(:last-child){border-right:1px solid var(--line)}
+    .daybeat small{display:block;margin-bottom:26px;font-size:.75rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+    .daybeat b{display:block;margin-bottom:8px;color:var(--deep);font-size:1.18rem}
+    .daybeat p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.55}
+    .scribble{position:absolute;width:110px;height:38px;border:3px solid var(--coral);border-color:var(--coral) transparent transparent transparent;border-radius:50%;transform:rotate(-6deg);right:8%;bottom:-12px;opacity:.65}
     .mobile-cta{display:none}
     footer{background:var(--deep);color:#fff;padding:34px 0}
     .footer-inner{display:flex;justify-content:space-between;gap:24px;align-items:center}
@@ -206,8 +226,13 @@
       .hero-note{left:0;bottom:0;font-size:.9rem}.spark{width:58px;height:58px;right:0}
       .facts{grid-template-columns:1fr;margin-bottom:38px}
       .section{padding:60px 0}
-      .story-grid,.services,.prices,.nso-grid,.signup,.visit-card,.steps,.fit-grid{grid-template-columns:1fr}
+      .story-grid,.services,.prices,.nso-grid,.signup,.visit-card,.steps,.fit-grid,.editorial{grid-template-columns:1fr}
       .price-help{align-items:flex-start;flex-direction:column}
+      .editorial-title{position:static}
+      .editorial-item{grid-template-columns:58px 1fr}
+      .dayline{grid-template-columns:1fr 1fr}
+      .daybeat:nth-child(2){border-right:0}
+      .daybeat:nth-child(-n+2){border-bottom:1px solid var(--line)}
       .photo-card{min-height:280px}.why-grid{grid-template-columns:1fr 1fr}
       .why{min-height:150px}.signup-copy{position:static}.pair{grid-template-columns:1fr}
       .visit-actions{justify-content:flex-start}form{padding:18px}.footer-inner,.footer-links{flex-direction:column;align-items:flex-start}
@@ -235,6 +260,7 @@
     details[open]{box-shadow:0 12px 28px rgba(35,49,47,.07)}
     @keyframes floatSoft{0%,100%{transform:translateY(0) rotate(1deg)}50%{transform:translateY(-10px) rotate(-1deg)}}
     @keyframes floatSoft2{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(8px) rotate(2deg)}}
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
       *,*:before,*:after{animation:none!important;transition:none!important}
@@ -287,6 +313,14 @@
     </div>
   </div>
 
+  <div class="identity-band" aria-hidden="true">
+    <div class="identity-track">
+      <span>persoonlijke aandacht <i>✦</i> bewegen <i>✦</i> buiten spelen <i>✦</i> ontdekken <i>✦</i></span>
+      <span>persoonlijke aandacht <i>✦</i> bewegen <i>✦</i> buiten spelen <i>✦</i> ontdekken <i>✦</i></span>
+      <span>persoonlijke aandacht <i>✦</i> bewegen <i>✦</i> buiten spelen <i>✦</i> ontdekken <i>✦</i></span>
+    </div>
+  </div>
+
   <section class="section white">
     <div class="wrap">
       <div class="section-head">
@@ -329,33 +363,47 @@
   </section>
 
   <section class="section soft-sky">
-    <div class="wrap">
-      <div class="section-head">
+    <div class="wrap editorial">
+      <div class="editorial-title reveal">
         <p class="kicker">Waarom Cura Kids</p>
-        <h2>Meer dan alleen opvang.</h2>
-        <p>Je betaalt voor aandacht, ontwikkeling en gemak voor je gezin.</p>
+        <h2>Geen standaard opvangdag.</h2>
+        <p>De waarde zit in hoe de dag voelt: persoonlijk, actief en praktisch voor ouders.</p>
       </div>
-
-      <div class="why-grid reveal" aria-label="Waarom ouders voor Cura Kids kiezen">
-        <div class="why"><span class="why-icon">♡</span><b>Persoonlijke aandacht</b><span>Kleinschalig, dus meer oog voor jouw kind.</span></div>
-        <div class="why"><span class="why-icon">☀</span><b>Actieve dagen</b><span>Buitenspelen, bewegen en creatieve activiteiten.</span></div>
-        <div class="why"><span class="why-icon">✦</span><b>Rust en structuur</b><span>Een vertrouwde dagindeling waarin kinderen kunnen groeien.</span></div>
-        <div class="why"><span class="why-icon">✓</span><b>Minder regelwerk</b><span>Opvang, eten en bij NSO desgewenst ophalen geregeld.</span></div>
+      <div class="editorial-list reveal reveal-delay-1">
+        <article class="editorial-item">
+          <div class="editorial-num">01</div>
+          <div><h3>Je kind wordt gezien</h3><p>Kleinschalige opvang geeft meer ruimte voor persoonlijke aandacht en begeleiding.</p></div>
+        </article>
+        <article class="editorial-item">
+          <div class="editorial-num">02</div>
+          <div><h3>De dag beweegt mee</h3><p>Buitenspelen, bewegen en creatieve activiteiten zorgen voor afwisseling in plaats van alleen binnen zitten.</p></div>
+        </article>
+        <article class="editorial-item">
+          <div class="editorial-num">03</div>
+          <div><h3>Rust en structuur blijven</h3><p>Een herkenbare dagindeling geeft kinderen houvast, terwijl er genoeg ruimte blijft om te spelen en ontdekken.</p></div>
+        </article>
+        <article class="editorial-item">
+          <div class="editorial-num">04</div>
+          <div><h3>Ook praktisch voor ouders</h3><p>Eten tijdens de opvang en bij NSO de optie om ophalen te regelen maken een drukke werkdag eenvoudiger.</p></div>
+        </article>
       </div>
     </div>
   </section>
 
   <section class="section soft-peach">
     <div class="wrap">
-      <div class="section-head">
-        <p class="kicker">Past Cura Kids bij jullie?</p>
-        <h2>Voor gezinnen die dit belangrijk vinden.</h2>
+      <div class="section-head reveal">
+        <p class="kicker">Een dag bij Cura Kids</p>
+        <h2>Van binnenkomen tot weer naar huis.</h2>
+        <p>Niet als strak uurrooster, maar als beeld van hoe de opvangdag is opgebouwd.</p>
       </div>
-      <div class="fit-grid reveal">
-        <article class="fit"><h3>Meer persoonlijke aandacht</h3><p>Je zoekt geen grote, anonieme opvang maar een kleinschalige plek waar je kind gezien wordt.</p></article>
-        <article class="fit"><h3>Een actieve dag</h3><p>Je wilt dat je kind beweegt, buiten speelt en meer doet dan alleen wachten tot het wordt opgehaald.</p></article>
-        <article class="fit"><h3>Praktisch gemak</h3><p>Je waardeert duidelijke tarieven, eten tijdens de opvang en bij NSO de optie om ophalen te regelen.</p></article>
+      <div class="dayline reveal reveal-delay-1">
+        <article class="daybeat"><small>Start</small><b>Aankomen & landen</b><p>Rustig binnenkomen en wennen aan de groep en de dag.</p></article>
+        <article class="daybeat"><small>Actief</small><b>Spelen & bewegen</b><p>Buiten zijn, vrij spel en activiteiten die energie geven.</p></article>
+        <article class="daybeat"><small>Ontdekken</small><b>Creatief bezig zijn</b><p>Muziek, dans, theater, yoga en andere speelse activiteiten.</p></article>
+        <article class="daybeat"><small>Afsluiten</small><b>Eten & tot rust komen</b><p>Een vertrouwd moment om samen te eten en de dag rustig af te ronden.</p></article>
       </div>
+      <span class="scribble" aria-hidden="true"></span>
     </div>
   </section>
 
