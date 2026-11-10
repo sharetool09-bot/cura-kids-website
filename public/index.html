@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cura Kids | Kinderopvang op Curaçao</title>
+  <meta name="description" content="Kleinschalige kinderopvang in Bottelier, Curaçao. Bekijk algemene informatie, tarieven en inschrijving.">
+  <meta name="theme-color" content="#fbf6ec">
+  <style>
+    :root{
+      --sand:#fbf6ec;--paper:#fffdf8;--ink:#23312f;--deep:#184843;
+      --teal:#236c64;--mint:#dfeee8;--sky:#dfeef5;--peach:#f8d8c7;
+      --yellow:#f5d575;--coral:#ef8f7e;--muted:#6e7976;--line:#e7dfd4;
+      --shadow:0 20px 60px rgba(35,49,47,.10);--r:28px
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;background:var(--sand);color:var(--ink);
+      font-family:ui-rounded,"Avenir Next","Segoe UI",system-ui,sans-serif;
+      overflow-x:hidden
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+    header{
+      position:sticky;top:12px;z-index:30;width:min(1180px,calc(100% - 24px));
+      margin:12px auto 0;padding:10px 12px 10px 18px;display:flex;
+      align-items:center;justify-content:space-between;gap:18px;
+      border:1px solid rgba(24,72,67,.12);border-radius:999px;
+      background:rgba(255,253,248,.92);backdrop-filter:blur(14px);
+      box-shadow:0 10px 30px rgba(35,49,47,.08)
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--deep);letter-spacing:-.04em}
+    .brand-dot{width:30px;height:30px;border-radius:50%;background:var(--yellow);position:relative}
+    .brand-dot:after{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--coral);right:-4px;bottom:0}
+    nav{display:flex;align-items:center;gap:26px;font-size:.94rem;font-weight:800}
+    .nav-cta{padding:10px 18px;border-radius:999px;background:var(--teal);color:white}
+    .hero{
+      position:relative;padding:72px 0 54px;display:grid;
+      grid-template-columns:.9fr 1.1fr;align-items:center;gap:60px
+    }
+    .hero:before,.hero:after{
+      content:"";position:absolute;border-radius:999px;z-index:-1;filter:blur(.2px)
+    }
+    .hero:before{width:170px;height:170px;background:var(--sky);left:-110px;top:90px}
+    .hero:after{width:120px;height:120px;background:var(--peach);right:-75px;bottom:40px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;padding:8px 12px;
+      border-radius:999px;background:var(--mint);color:var(--teal);
+      font-size:.76rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase
+    }
+    .eyebrow:before{content:"•";font-size:1rem}
+    h1{max-width:620px;margin:0 0 20px;font-size:clamp(3.3rem,7vw,6.1rem);line-height:.92;letter-spacing:-.075em;color:var(--deep)}
+    .hero-copy>p:not(.eyebrow){max-width:540px;margin:0 0 30px;font-size:1.1rem;line-height:1.65;color:var(--muted)}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}
+    .primary,.secondary{
+      min-height:50px;padding:0 22px;display:inline-flex;align-items:center;justify-content:center;
+      border-radius:999px;font-weight:900
+    }
+    .primary{background:var(--teal);color:#fff;box-shadow:0 12px 30px rgba(35,108,100,.20)}
+    .secondary{background:var(--paper);border:1px solid rgba(35,108,100,.25);color:var(--teal)}
+    .hero-visual{position:relative;padding:22px 22px 34px 34px}
+    .hero-card{position:relative;overflow:hidden;border-radius:42px 42px 130px 42px;background:var(--paper);box-shadow:var(--shadow);transform:rotate(1.2deg)}
+    .hero-card img{width:100%;height:470px;object-fit:cover}
+    .hero-note{
+      position:absolute;left:0;bottom:6px;max-width:210px;padding:16px 18px;border-radius:20px;
+      background:var(--yellow);color:var(--deep);font-weight:900;line-height:1.18;
+      box-shadow:0 14px 28px rgba(35,49,47,.13);transform:rotate(-4deg)
+    }
+    .spark{position:absolute;right:5px;top:0;width:78px;height:78px;background:var(--coral);clip-path:polygon(50% 0,61% 36%,100% 25%,68% 50%,100% 75%,61% 64%,50% 100%,39% 64%,0 75%,32% 50%,0 25%,39% 36%)}
+    .facts{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:74px
+    }
+    .fact{padding:22px 24px;border-radius:22px;background:var(--paper);border:1px solid var(--line)}
+    .fact:nth-child(1){background:var(--mint)}.fact:nth-child(2){background:var(--sky)}.fact:nth-child(3){background:var(--peach)}
+    .fact strong{display:block;font-size:1.1rem;color:var(--deep)}.fact span{font-size:.87rem;color:var(--muted)}
+    section{scroll-margin-top:100px}
+    .section{padding:82px 0}
+    .section.white{background:var(--paper)}
+    .section-head{max-width:760px;margin-bottom:34px}
+    .kicker{margin:0 0 10px;color:var(--teal);font-size:.8rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    h2{margin:0 0 12px;font-size:clamp(2.5rem,5vw,4.5rem);line-height:.98;letter-spacing:-.06em;color:var(--deep)}
+    .section-head>p{margin:0;color:var(--muted);line-height:1.7;font-size:1.03rem}
+    .story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
+    .story{
+      position:relative;padding:34px;border-radius:34px;background:var(--mint);overflow:hidden
+    }
+    .story:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.42);right:-48px;bottom:-60px}
+    .story h3,.service h3,.price-card h3,.signup-copy h3{margin:0 0 10px;font-size:1.7rem;letter-spacing:-.04em;color:var(--deep)}
+    .story p,.service p{color:var(--muted);line-height:1.7}
+    .story ul{padding-left:1.2rem;line-height:1.95}
+    .photo-card{position:relative;overflow:hidden;border-radius:34px;background:var(--sky);min-height:390px}
+    .photo-card img{width:100%;height:100%;object-fit:cover}
+    .photo-sticker{position:absolute;right:18px;bottom:18px;padding:12px 16px;border-radius:18px;background:var(--paper);font-weight:900;color:var(--deep);transform:rotate(2deg)}
+    .services{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+    .service{padding:26px;border-radius:26px;border:1px solid var(--line);background:var(--paper)}
+    .service:nth-child(1){box-shadow:inset 0 6px 0 var(--yellow)}.service:nth-child(2){box-shadow:inset 0 6px 0 var(--coral)}
+    .service .mini{font-size:.76rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+    .why{min-height:180px;padding:22px;border-radius:26px;display:flex;flex-direction:column;justify-content:space-between}
+    .why:nth-child(1){background:var(--yellow)}.why:nth-child(2){background:var(--sky)}.why:nth-child(3){background:var(--peach)}.why:nth-child(4){background:var(--mint)}
+    .why b{font-size:1.2rem;color:var(--deep)}.why span{font-size:.9rem;line-height:1.5;color:#42514e}
+    .why-icon{font-size:1.55rem}
+    .prices{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .price-card,.nso{padding:26px;border-radius:30px;border:1px solid var(--line);background:var(--paper)}
+    .price-card:nth-child(1){box-shadow:inset 0 7px 0 var(--yellow)}
+    .price-card:nth-child(2){box-shadow:inset 0 7px 0 var(--sky)}
+    .price-label{margin:0 0 8px;font-size:.76rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+    .price-list{margin-top:14px;border-top:1px solid var(--line)}
+    .row{min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line)}
+    .row strong{color:var(--deep);font-size:1.02rem}
+    .nso{margin-top:20px;box-shadow:inset 0 7px 0 var(--coral)}
+    .nso-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}
+    .nso-grid>div{padding:18px;border-radius:20px;background:var(--sand)}
+    .notes{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+    .notes span{padding:9px 13px;border-radius:999px;background:var(--mint);font-size:.82rem;font-weight:800;color:var(--deep)}
+    .signup{display:grid;grid-template-columns:.82fr 1.18fr;gap:58px;align-items:start}
+    .signup-copy{position:sticky;top:110px}
+    .signup-copy>p{color:var(--muted);line-height:1.7}
+    .contact{margin-top:28px;padding:22px;border-radius:26px;background:var(--deep);color:#fff;display:grid;gap:8px}
+    .contact span,.contact a{color:#dce8e5;font-size:.9rem}
+    form{padding:26px;border:1px solid var(--line);border-radius:30px;background:var(--sand);display:grid;gap:14px}
+    label{display:grid;gap:7px;color:var(--deep);font-size:.88rem;font-weight:850}
+    input,select,textarea{width:100%;padding:13px 14px;border:1px solid #d9d1c6;border-radius:14px;background:#fff;color:var(--ink);font:inherit;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(35,108,100,.12)}
+    .pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    button{min-height:50px;border:0;border-radius:14px;background:var(--teal);color:#fff;font:inherit;font-weight:900;cursor:pointer}
+    .helper{margin:0;color:var(--muted);font-size:.78rem;line-height:1.5}
+    footer{background:var(--deep);color:#fff;padding:34px 0}
+    .footer-inner{display:flex;justify-content:space-between;gap:24px;align-items:center}
+    .footer-links{display:flex;gap:18px}.footer-links a,.footer-inner span{color:#dce8e5;font-size:.88rem}
+    @media(max-width:900px){
+      .why-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:780px){
+      .wrap{width:min(100% - 28px,1180px)}
+      header{top:8px;width:calc(100% - 18px);padding:8px 10px 8px 14px}
+      nav a{display:none}.nav-cta{display:inline-flex!important;padding:9px 13px;font-size:.82rem}
+      .hero{padding:44px 0 34px;grid-template-columns:1fr;gap:26px}
+      h1{font-size:clamp(3.4rem,17vw,5rem)}
+      .hero-visual{padding:12px 4px 28px 12px}.hero-card{border-radius:28px 28px 76px 28px}.hero-card img{height:310px}
+      .hero-note{left:0;bottom:0;font-size:.9rem}.spark{width:58px;height:58px;right:0}
+      .facts{grid-template-columns:1fr;margin-bottom:38px}
+      .section{padding:60px 0}
+      .story-grid,.services,.prices,.nso-grid,.signup{grid-template-columns:1fr}
+      .photo-card{min-height:280px}.why-grid{grid-template-columns:1fr 1fr}
+      .why{min-height:150px}.signup-copy{position:static}.pair{grid-template-columns:1fr}
+      form{padding:18px}.footer-inner,.footer-links{flex-direction:column;align-items:flex-start}
+      .footer-links{gap:8px}
+    }
+    @media(max-width:480px){.why-grid{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#algemeen"><span class="brand-dot" aria-hidden="true"></span><span>Cura Kids</span></a>
+  <nav aria-label="Hoofdnavigatie">
+    <a href="#algemeen">Algemeen</a>
+    <a href="#tarieven">Tarieven</a>
+    <a class="nav-cta" href="#inschrijving">Inschrijving</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="hero" id="algemeen">
+      <div class="hero-copy">
+        <p class="eyebrow">Kinderopvang op Curaçao</p>
+        <h1>Klein van schaal. Groot in aandacht.</h1>
+        <p>Een warme plek voor kinderen van 0 tot 7 jaar, met ruimte om te spelen, bewegen, ontdekken en gewoon zichzelf te zijn.</p>
+        <div class="actions">
+          <a class="primary" href="#inschrijving">Inschrijven</a>
+          <a class="secondary" href="#tarieven">Bekijk tarieven</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <span class="spark" aria-hidden="true"></span>
+        <div class="hero-card">
+          <img src="https://cura-kids.com/assets/images/carousel/slide1.jpg" alt="Cura Kids kinderopvang">
+        </div>
+        <div class="hero-note">Spelen, leren en groeien in een vertrouwde omgeving.</div>
+      </div>
+    </section>
+
+    <div class="facts">
+      <div class="fact"><strong>0-7 jaar</strong><span>Kinderdagverblijf en NSO</span></div>
+      <div class="fact"><strong>Bottelier</strong><span>Anasaweg 20</span></div>
+      <div class="fact"><strong>Kleinschalig</strong><span>Persoonlijke aandacht</span></div>
+    </div>
+  </div>
+
+  <section class="section white">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Algemeen</p>
+        <h2>Een plek die vertrouwd voelt.</h2>
+        <p>Cura Kids combineert rust en structuur met veel ruimte voor beweging, creativiteit en plezier.</p>
+      </div>
+
+      <div class="story-grid">
+        <article class="story">
+          <h3>Huiselijk, actief en persoonlijk</h3>
+          <p>Kinderen krijgen bij Cura Kids de ruimte om in hun eigen tempo te spelen, leren en ontdekken.</p>
+          <ul>
+            <li>Actief speel- en leerbeleid</li>
+            <li>Veel buitenspelen en bewegen</li>
+            <li>Muziek, dans, theater en yoga</li>
+            <li>Warme maaltijd en tussendoortjes</li>
+          </ul>
+        </article>
+
+        <div class="photo-card">
+          <img src="https://cura-kids.com/assets/images/carousel/slide2.jpg" alt="Kinderen spelen bij Cura Kids">
+          <div class="photo-sticker">Elke dag iets te ontdekken ✦</div>
+        </div>
+      </div>
+
+      <div class="services">
+        <article class="service">
+          <p class="mini">Kinderdagverblijf</p>
+          <h3>Voor de allerkleinsten</h3>
+          <p>Verzorging, vrij spel, thema-activiteiten en ontwikkeling binnen een veilige, vertrouwde structuur.</p>
+        </article>
+        <article class="service">
+          <p class="mini">Naschoolse opvang</p>
+          <h3>Na school weer even thuis</h3>
+          <p>Tijd om te eten, ontspannen, bewegen, spelen en samen een fijne middag te beleven.</p>
+        </article>
+      </div>
+
+      <div class="why-grid" aria-label="Waarom Cura Kids">
+        <div class="why"><span class="why-icon">☀</span><b>Buiten zijn</b><span>Bewegen, frisse lucht en ruimte om energie kwijt te kunnen.</span></div>
+        <div class="why"><span class="why-icon">♫</span><b>Creativiteit</b><span>Muziek, dans, theater en activiteiten die nieuwsgierigheid prikkelen.</span></div>
+        <div class="why"><span class="why-icon">♡</span><b>Aandacht</b><span>Kleinschalige opvang met oog voor ieder kind.</span></div>
+        <div class="why"><span class="why-icon">✦</span><b>Ontdekken</b><span>Spelenderwijs leren en groeien op een manier die bij het kind past.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tarieven">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Tarieven</p>
+        <h2>Duidelijk en makkelijk vergelijken.</h2>
+        <p>Bekijk in één oogopslag welke opvang het beste bij jullie week past.</p>
+      </div>
+
+      <div class="prices">
+        <article class="price-card">
+          <p class="price-label">Kinderdagverblijf</p>
+          <h3>Hele dagen per maand</h3>
+          <div class="price-list">
+            <div class="row"><span>1 dag</span><strong>220,-</strong></div>
+            <div class="row"><span>2 dagen</span><strong>410,-</strong></div>
+            <div class="row"><span>3 dagen</span><strong>560,-</strong></div>
+            <div class="row"><span>4 dagen</span><strong>685,-</strong></div>
+            <div class="row"><span>5 dagen</span><strong>750,-</strong></div>
+          </div>
+        </article>
+
+        <article class="price-card">
+          <p class="price-label">Kinderdagverblijf</p>
+          <h3>Halve dagen per maand</h3>
+          <div class="price-list">
+            <div class="row"><span>1 halve dag</span><strong>140,-</strong></div>
+            <div class="row"><span>2 halve dagen</span><strong>295,-</strong></div>
+            <div class="row"><span>3 halve dagen</span><strong>400,-</strong></div>
+            <div class="row"><span>4 halve dagen</span><strong>485,-</strong></div>
+            <div class="row"><span>5 halve dagen</span><strong>545,-</strong></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="nso">
+        <p class="price-label">Naschoolse opvang</p>
+        <h3>Met of zonder ophalen</h3>
+        <div class="nso-grid">
+          <div>
+            <strong>Inclusief ophalen</strong>
+            <div class="price-list">
+              <div class="row"><span>1 halve dag</span><strong>140,-</strong></div>
+              <div class="row"><span>2 halve dagen</span><strong>245,-</strong></div>
+              <div class="row"><span>3 halve dagen</span><strong>325,-</strong></div>
+              <div class="row"><span>4 halve dagen</span><strong>420,-</strong></div>
+              <div class="row"><span>5 halve dagen</span><strong>500,-</strong></div>
+            </div>
+          </div>
+          <div>
+            <strong>Exclusief ophalen</strong>
+            <div class="price-list">
+              <div class="row"><span>1 halve dag</span><strong>125,-</strong></div>
+              <div class="row"><span>2 halve dagen</span><strong>225,-</strong></div>
+              <div class="row"><span>3 halve dagen</span><strong>295,-</strong></div>
+              <div class="row"><span>4 halve dagen</span><strong>390,-</strong></div>
+              <div class="row"><span>5 halve dagen</span><strong>470,-</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes">
+        <span>Extra KDV dag: 50,-</span>
+        <span>Dagdeel: 35,-</span>
+        <span>Extra NSO halve dag: 35,-</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white" id="inschrijving">
+    <div class="wrap signup">
+      <div class="signup-copy">
+        <p class="kicker">Inschrijving</p>
+        <h2>Klaar om kennis te maken?</h2>
+        <p>Vul de belangrijkste gegevens in. Daarna opent WhatsApp met je bericht alvast ingevuld, zodat je het eerst zelf kunt controleren.</p>
+        <div class="contact">
+          <strong>Cura Kids</strong>
+          <span>Anasaweg 20, Bottelier / Dominguito</span>
+          <a href="tel:+59996882965">+5999 688 2965</a>
+          <a href="mailto:info@cura-kids.com">info@cura-kids.com</a>
+        </div>
+      </div>
+
+      <form id="signup-form">
+        <label>Naam ouder / verzorger<input required name="ouder" autocomplete="name"></label>
+        <label>Telefoonnummer<input required name="telefoon" inputmode="tel" autocomplete="tel"></label>
+        <label>E-mailadres<input name="email" type="email" autocomplete="email"></label>
+        <label>Naam kind<input required name="kind"></label>
+        <div class="pair">
+          <label>Leeftijd kind<input required name="leeftijd"></label>
+          <label>Gewenste opvang
+            <select required name="opvang">
+              <option value="">Kies opvang</option>
+              <option>Kinderdagverblijf</option>
+              <option>Naschoolse opvang</option>
+            </select>
+          </label>
+        </div>
+        <label>Gewenste dagen<input name="dagen" placeholder="Bijv. maandag, woensdag, vrijdag"></label>
+        <label>Opmerking<textarea name="opmerking" rows="4"></textarea></label>
+        <button type="submit">Verstuur via WhatsApp</button>
+        <p class="helper">Er wordt niets automatisch verzonden. Je controleert het bericht eerst zelf in WhatsApp.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div><strong>Cura Kids</strong><span>Kleinschalige kinderopvang op Curaçao</span></div>
+    <div class="footer-links"><a href="#algemeen">Algemeen</a><a href="#tarieven">Tarieven</a><a href="#inschrijving">Inschrijving</a></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById("signup-form").addEventListener("submit",function(e){
+  e.preventDefault();
+  const f=new FormData(e.currentTarget);
+  const msg=[
+    "Hallo Cura Kids, ik wil mijn kind inschrijven.","",
+    "Ouder/verzorger: "+(f.get("ouder")||""),
+    "Telefoon: "+(f.get("telefoon")||""),
+    "E-mail: "+(f.get("email")||""),
+    "Naam kind: "+(f.get("kind")||""),
+    "Leeftijd: "+(f.get("leeftijd")||""),
+    "Opvang: "+(f.get("opvang")||""),
+    "Gewenste dagen: "+(f.get("dagen")||""),
+    "Opmerking: "+(f.get("opmerking")||"")
+  ].join("\n");
+  window.open("https://wa.me/59996882965?text="+encodeURIComponent(msg),"_blank","noopener,noreferrer");
+});
+</script>
+</body>
+</html>
