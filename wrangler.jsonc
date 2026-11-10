@@ -3,6 +3,6 @@
   "name": "cura-kids-website",
   "compatibility_date": "2026-11-10",
   "assets": {
-    "directory": "."
+    "directory": "./public"
   }
 }
