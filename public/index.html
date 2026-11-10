@@ -137,6 +137,10 @@
     .nso-grid>div{padding:18px;border-radius:20px;background:var(--sand)}
     .notes{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
     .notes span{padding:9px 13px;border-radius:999px;background:var(--mint);font-size:.82rem;font-weight:800;color:var(--deep)}
+    .price-help{margin-top:24px;padding:24px;border-radius:24px;background:var(--deep);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .price-help strong{display:block;font-size:1.15rem;margin-bottom:4px}
+    .price-help span{color:#dce8e5;font-size:.9rem;line-height:1.5}
+    .price-help a{flex:0 0 auto;min-height:44px;padding:0 16px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:var(--yellow);color:var(--deep);font-weight:900}
     .signup{display:grid;grid-template-columns:.82fr 1.18fr;gap:58px;align-items:start}
     .signup-copy{position:sticky;top:110px}
     .signup-copy>p{color:var(--muted);line-height:1.7}
@@ -194,6 +198,7 @@
       .facts{grid-template-columns:1fr;margin-bottom:38px}
       .section{padding:60px 0}
       .story-grid,.services,.prices,.nso-grid,.signup,.visit-card,.steps,.fit-grid{grid-template-columns:1fr}
+      .price-help{align-items:flex-start;flex-direction:column}
       .photo-card{min-height:280px}.why-grid{grid-template-columns:1fr 1fr}
       .why{min-height:150px}.signup-copy{position:static}.pair{grid-template-columns:1fr}
       .visit-actions{justify-content:flex-start}form{padding:18px}.footer-inner,.footer-links{flex-direction:column;align-items:flex-start}
@@ -420,6 +425,14 @@
         <span>Dagdeel: 35,-</span>
         <span>Extra NSO halve dag: 35,-</span>
       </div>
+
+      <div class="price-help">
+        <div>
+          <strong>Niet zeker welk pakket past?</strong>
+          <span>Stuur je gewenste dagen door. Cura Kids kan met je meedenken voordat je beslist.</span>
+        </div>
+        <a href="#inschrijving">Vraag het via WhatsApp</a>
+      </div>
     </div>
   </section>
 
@@ -434,6 +447,7 @@
         <details><summary>Wat doet mijn kind tijdens de opvang?</summary><p>De dag combineert vrij spel, buitenspelen, beweging en creatieve activiteiten zoals muziek, dans, theater en yoga.</p></details>
         <details><summary>Is eten inbegrepen?</summary><p>Warme maaltijden en tussendoortjes maken deel uit van de opvang.</p></details>
         <details><summary>Kan mijn kind na school worden opgehaald?</summary><p>Bij de naschoolse opvang is er een tarief met ophalen en een tarief zonder ophalen.</p></details>
+        <details><summary>Moet ik meteen inschrijven?</summary><p>Nee. Je kunt eerst vragen stellen of een kennismaking bespreken en daarna beslissen wat bij jullie past.</p></details>
       </div>
     </div>
   </section>
@@ -466,11 +480,11 @@
           </select>
         </label>
         <label>Naam ouder / verzorger<input required name="ouder" autocomplete="name"></label>
-        <label>Telefoonnummer<input required name="telefoon" inputmode="tel" autocomplete="tel"></label>
+        <label>Telefoonnummer<input required name="telefoon" type="tel" inputmode="tel" autocomplete="tel" placeholder="+5999 ..."></label>
         <label>E-mailadres<input name="email" type="email" autocomplete="email"></label>
-        <label>Naam kind<input required name="kind"></label>
+        <label>Naam kind<input required name="kind" autocomplete="off"></label>
         <div class="pair">
-          <label>Leeftijd kind<input required name="leeftijd"></label>
+          <label>Leeftijd kind<input required name="leeftijd" inputmode="numeric" autocomplete="off" placeholder="Bijv. 3 jaar"></label>
           <label>Gewenste opvang
             <select required name="opvang">
               <option value="">Kies opvang</option>
@@ -479,7 +493,7 @@
             </select>
           </label>
         </div>
-        <label>Gewenste dagen<input name="dagen" placeholder="Bijv. maandag, woensdag, vrijdag"></label>
+        <label>Gewenste dagen<input name="dagen" autocomplete="off" placeholder="Bijv. maandag, woensdag, vrijdag"></label>
         <label>Opmerking<textarea name="opmerking" rows="4"></textarea></label>
         <button type="submit">Plan kennismaking via WhatsApp</button>
         <p class="helper">Er wordt niets automatisch verzonden. Je controleert het bericht eerst zelf in WhatsApp.</p>
