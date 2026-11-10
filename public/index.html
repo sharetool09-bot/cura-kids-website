@@ -53,7 +53,7 @@
       background:rgba(255,253,248,.92);backdrop-filter:blur(14px);
       box-shadow:0 10px 30px rgba(35,49,47,.08)
     }
-    .brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--deep);letter-spacing:-.04em}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:950;color:var(--deep);letter-spacing:-.05em;font-size:1.08rem}
     .brand-dot{width:30px;height:30px;border-radius:50%;background:var(--yellow);position:relative}
     .brand-dot:after{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--coral);right:-4px;bottom:0}
     nav{display:flex;align-items:center;gap:26px;font-size:.94rem;font-weight:800}
@@ -73,7 +73,9 @@
       font-size:.76rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase
     }
     .eyebrow:before{content:"•";font-size:1rem}
-    h1{max-width:620px;margin:0 0 20px;font-size:clamp(3.3rem,7vw,6.1rem);line-height:.92;letter-spacing:-.075em;color:var(--deep)}
+    h1{max-width:650px;margin:0 0 20px;font-size:clamp(3.35rem,7vw,6.15rem);line-height:.9;letter-spacing:-.082em;color:var(--deep)}
+    .hero-word{position:relative;display:inline-block}
+    .hero-word:after{content:"";position:absolute;left:2%;right:0;bottom:-6px;height:14px;background:var(--yellow);border-radius:60% 40% 55% 45%;z-index:-1;transform:rotate(-1.5deg)}
     .hero-copy>p:not(.eyebrow){max-width:540px;margin:0 0 30px;font-size:1.1rem;line-height:1.65;color:var(--muted)}
     .actions{display:flex;flex-wrap:wrap;gap:12px}
     .primary,.secondary{
@@ -83,7 +85,8 @@
     .primary{background:var(--teal);color:#fff;box-shadow:0 12px 30px rgba(35,108,100,.20)}
     .secondary{background:var(--paper);border:1px solid rgba(35,108,100,.25);color:var(--teal)}
     .hero-visual{position:relative;padding:22px 22px 34px 34px}
-    .hero-card{position:relative;overflow:hidden;border-radius:42px 42px 130px 42px;background:var(--paper);box-shadow:var(--shadow);transform:rotate(1.2deg)}
+    .hero-card{position:relative;overflow:hidden;border-radius:52px 20px 120px 34px;background:var(--paper);box-shadow:var(--shadow);transform:rotate(1.2deg)}
+    .hero-badge{position:absolute;right:-8px;bottom:72px;width:118px;height:118px;border-radius:42% 58% 55% 45% / 45% 38% 62% 55%;background:var(--sky);display:grid;place-items:center;text-align:center;padding:16px;color:var(--deep);font-size:.82rem;font-weight:950;line-height:1.08;transform:rotate(7deg);box-shadow:0 16px 28px rgba(35,49,47,.12)}
     .hero-card img{width:100%;height:470px;object-fit:cover}
     .hero-note{
       position:absolute;left:0;bottom:6px;max-width:210px;padding:16px 18px;border-radius:20px;
@@ -94,12 +97,15 @@
     .facts{
       display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:74px
     }
-    .fact{padding:22px 24px;border-radius:22px;background:var(--paper);border:1px solid var(--line)}
+    .fact{padding:22px 24px;border-radius:22px;background:var(--paper);border:1px solid var(--line);position:relative;overflow:hidden}
+    .fact:after{content:"";position:absolute;width:52px;height:52px;border-radius:50%;right:-18px;bottom:-18px;background:rgba(255,255,255,.45)}
     .fact:nth-child(1){background:var(--mint)}.fact:nth-child(2){background:var(--sky)}.fact:nth-child(3){background:var(--peach)}
     .fact strong{display:block;font-size:1.1rem;color:var(--deep)}.fact span{font-size:.87rem;color:var(--muted)}
     section{scroll-margin-top:100px}
     .section{padding:82px 0}
     .section.white{background:var(--paper)}
+    .section.soft-sky{background:linear-gradient(180deg,#eef7f9 0%,#e8f4f3 100%)}
+    .section.soft-peach{background:linear-gradient(180deg,#fff7f1 0%,#fdf0e8 100%)}
     .section-head{max-width:760px;margin-bottom:34px}
     .kicker{margin:0 0 10px;color:var(--teal);font-size:.8rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
     h2{margin:0 0 12px;font-size:clamp(2.5rem,5vw,4.5rem);line-height:.98;letter-spacing:-.06em;color:var(--deep)}
@@ -116,11 +122,13 @@
     .photo-card img{width:100%;height:100%;object-fit:cover}
     .photo-sticker{position:absolute;right:18px;bottom:18px;padding:12px 16px;border-radius:18px;background:var(--paper);font-weight:900;color:var(--deep);transform:rotate(2deg)}
     .services{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
-    .service{padding:26px;border-radius:26px;border:1px solid var(--line);background:var(--paper)}
+    .service{padding:28px;border-radius:34px 20px 34px 20px;border:1px solid var(--line);background:var(--paper);position:relative}
+    .service:nth-child(2){border-radius:20px 34px 20px 34px}
     .service:nth-child(1){box-shadow:inset 0 6px 0 var(--yellow)}.service:nth-child(2){box-shadow:inset 0 6px 0 var(--coral)}
     .service .mini{font-size:.76rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
     .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
-    .why{min-height:180px;padding:22px;border-radius:26px;display:flex;flex-direction:column;justify-content:space-between}
+    .why{min-height:180px;padding:22px;border-radius:28px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-.5deg)}
+    .why:nth-child(even){transform:rotate(.7deg)}
     .why:nth-child(1){background:var(--yellow)}.why:nth-child(2){background:var(--sky)}.why:nth-child(3){background:var(--peach)}.why:nth-child(4){background:var(--mint)}
     .why b{font-size:1.2rem;color:var(--deep)}.why span{font-size:.9rem;line-height:1.5;color:#42514e}
     .why-icon{font-size:1.55rem}
@@ -155,7 +163,8 @@
     .helper{margin:0;color:var(--muted);font-size:.78rem;line-height:1.5}
     .trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:-42px auto 72px}
     .trust-strip span{padding:9px 13px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:.82rem;font-weight:850;color:var(--deep)}
-    .visit-card{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:32px;border-radius:32px;background:var(--deep);color:#fff}
+    .visit-card{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:36px;border-radius:42px 22px 42px 22px;background:var(--deep);color:#fff;position:relative;overflow:hidden}
+    .visit-card:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(245,213,117,.14);right:-60px;top:-70px}
     .visit-card h2{color:#fff;font-size:clamp(2.2rem,4vw,3.6rem)}
     .visit-card p{color:#dce8e5;line-height:1.65;margin:0}
     .visit-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:10px}
@@ -173,7 +182,7 @@
     .step h3{margin:0 0 8px;color:var(--deep);font-size:1.22rem}
     .step p{margin:0;color:var(--muted);line-height:1.6;font-size:.92rem}
     .fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .fit{padding:24px;border-radius:24px;border:1px solid var(--line);background:var(--paper)}
+    .fit{padding:24px;border-radius:26px;border:1px solid var(--line);background:var(--paper);box-shadow:0 10px 28px rgba(35,49,47,.05)}
     .fit h3{margin:0 0 8px;color:var(--deep);font-size:1.22rem}
     .fit p{margin:0;color:var(--muted);line-height:1.6;font-size:.92rem}
     .contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
@@ -229,7 +238,7 @@
     <section class="hero" id="algemeen">
       <div class="hero-copy">
         <p class="eyebrow">Kinderopvang op Curaçao</p>
-        <h1>Kinderopvang waar jouw kind écht de ruimte krijgt om te groeien.</h1>
+        <h1>Kinderopvang waar jouw kind écht de ruimte krijgt om te <span class="hero-word">groeien.</span></h1>
         <p>Kleinschalige kinderopvang in Bottelier voor kinderen van 0 tot 7 jaar. Bij Cura Kids combineren we persoonlijke aandacht met buitenspelen, beweging, creatieve activiteiten en een vertrouwde dagelijkse structuur.</p>
         <div class="actions">
           <a class="primary" href="#inschrijving">Plan kennismaking</a>
@@ -243,6 +252,7 @@
         <div class="hero-card">
           <img src="https://cura-kids.com/assets/images/carousel/slide1.jpg" alt="Cura Kids kinderopvang" fetchpriority="high" decoding="async">
         </div>
+        <div class="hero-badge">0–7 jaar<br>in Bottelier</div>
         <div class="hero-note">Kinderdagverblijf en naschoolse opvang met persoonlijke aandacht.</div>
       </div>
     </section>
@@ -298,7 +308,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section soft-sky">
     <div class="wrap">
       <div class="section-head">
         <p class="kicker">Waarom Cura Kids</p>
@@ -315,7 +325,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section soft-peach">
     <div class="wrap">
       <div class="section-head">
         <p class="kicker">Past Cura Kids bij jullie?</p>
