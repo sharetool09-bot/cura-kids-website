@@ -219,7 +219,27 @@
       .mobile-cta .prices-link{background:var(--mint);color:var(--deep)}
     }
     @media(max-width:480px){.why-grid{grid-template-columns:1fr}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.is-visible{opacity:1;transform:none}
+    .reveal-delay-1{transition-delay:.08s}
+    .reveal-delay-2{transition-delay:.16s}
+    .reveal-delay-3{transition-delay:.24s}
+    .reveal-delay-4{transition-delay:.32s}
+    .float-soft{animation:floatSoft 5.5s ease-in-out infinite}
+    .float-soft-2{animation:floatSoft2 6.5s ease-in-out infinite}
+    .primary,.secondary,.nav-cta,.price-help a,.contact-actions a,.mobile-cta a{transition:transform .22s ease,box-shadow .22s ease,background-color .22s ease}
+    .primary:hover,.nav-cta:hover,.price-help a:hover,.contact-actions a:hover,.mobile-cta a:hover{transform:translateY(-2px)}
+    .secondary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(35,49,47,.08)}
+    .why,.fit,.service,.fact,.step,.price-card,.nso,details{transition:transform .25s ease,box-shadow .25s ease}
+    .why:hover,.fit:hover,.service:hover,.fact:hover,.step:hover,.price-card:hover,.nso:hover{transform:translateY(-4px) rotate(0deg);box-shadow:0 16px 34px rgba(35,49,47,.10)}
+    details[open]{box-shadow:0 12px 28px rgba(35,49,47,.07)}
+    @keyframes floatSoft{0%,100%{transform:translateY(0) rotate(1deg)}50%{transform:translateY(-10px) rotate(-1deg)}}
+    @keyframes floatSoft2{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(8px) rotate(2deg)}}
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*:before,*:after{animation:none!important;transition:none!important}
+      .reveal{opacity:1!important;transform:none!important}
+    }
   </style>
 </head>
 <body>
@@ -236,7 +256,7 @@
 <main>
   <div class="wrap">
     <section class="hero" id="algemeen">
-      <div class="hero-copy">
+      <div class="hero-copy reveal is-visible">
         <p class="eyebrow">Kinderopvang op Curaçao</p>
         <h1>Kinderopvang waar jouw kind écht de ruimte krijgt om te <span class="hero-word">groeien.</span></h1>
         <p>Kleinschalige kinderopvang in Bottelier voor kinderen van 0 tot 7 jaar. Bij Cura Kids combineren we persoonlijke aandacht met buitenspelen, beweging, creatieve activiteiten en een vertrouwde dagelijkse structuur.</p>
@@ -248,21 +268,21 @@
       </div>
 
       <div class="hero-visual">
-        <span class="spark" aria-hidden="true"></span>
-        <div class="hero-card">
+        <span class="spark float-soft-2" aria-hidden="true"></span>
+        <div class="hero-card float-soft">
           <img src="https://cura-kids.com/assets/images/carousel/slide1.jpg" alt="Cura Kids kinderopvang" fetchpriority="high" decoding="async">
         </div>
-        <div class="hero-badge">0–7 jaar<br>in Bottelier</div>
-        <div class="hero-note">Kinderdagverblijf en naschoolse opvang met persoonlijke aandacht.</div>
+        <div class="hero-badge float-soft-2">0–7 jaar<br>in Bottelier</div>
+        <div class="hero-note float-soft">Kinderdagverblijf en naschoolse opvang met persoonlijke aandacht.</div>
       </div>
     </section>
 
-    <div class="facts">
+    <div class="facts reveal">
       <div class="fact"><strong>0-7 jaar</strong><span>Kinderdagverblijf en NSO</span></div>
       <div class="fact"><strong>Bottelier</strong><span>Anasaweg 20</span></div>
       <div class="fact"><strong>Kleinschalig</strong><span>Persoonlijke aandacht</span></div>
     </div>
-    <div class="trust-strip" aria-label="Cura Kids voordelen">
+    <div class="trust-strip reveal reveal-delay-1" aria-label="Cura Kids voordelen">
       <span>Buitenspelen</span><span>Warme maaltijd</span><span>Creatieve activiteiten</span><span>NSO ophalen mogelijk</span>
     </div>
   </div>
@@ -275,7 +295,7 @@
         <p>Een veilige en actieve omgeving waar kinderen zich gezien voelen, plezier maken en zich stap voor stap kunnen ontwikkelen.</p>
       </div>
 
-      <div class="story-grid">
+      <div class="story-grid reveal">
         <article class="story">
           <h3>Meer dan alleen opvang</h3>
           <p>We bieden een duidelijke dagstructuur met persoonlijke begeleiding, vrij spel, beweging en activiteiten die passen bij de leeftijd en ontwikkeling van ieder kind.</p>
@@ -293,7 +313,7 @@
         </div>
       </div>
 
-      <div class="services">
+      <div class="services reveal reveal-delay-1">
         <article class="service">
           <p class="mini">Kinderdagverblijf</p>
           <h3>Kinderdagverblijf van 0 tot 4 jaar</h3>
@@ -316,7 +336,7 @@
         <p>Je betaalt voor aandacht, ontwikkeling en gemak voor je gezin.</p>
       </div>
 
-      <div class="why-grid" aria-label="Waarom ouders voor Cura Kids kiezen">
+      <div class="why-grid reveal" aria-label="Waarom ouders voor Cura Kids kiezen">
         <div class="why"><span class="why-icon">♡</span><b>Persoonlijke aandacht</b><span>Kleinschalig, dus meer oog voor jouw kind.</span></div>
         <div class="why"><span class="why-icon">☀</span><b>Actieve dagen</b><span>Buitenspelen, bewegen en creatieve activiteiten.</span></div>
         <div class="why"><span class="why-icon">✦</span><b>Rust en structuur</b><span>Een vertrouwde dagindeling waarin kinderen kunnen groeien.</span></div>
@@ -331,7 +351,7 @@
         <p class="kicker">Past Cura Kids bij jullie?</p>
         <h2>Voor gezinnen die dit belangrijk vinden.</h2>
       </div>
-      <div class="fit-grid">
+      <div class="fit-grid reveal">
         <article class="fit"><h3>Meer persoonlijke aandacht</h3><p>Je zoekt geen grote, anonieme opvang maar een kleinschalige plek waar je kind gezien wordt.</p></article>
         <article class="fit"><h3>Een actieve dag</h3><p>Je wilt dat je kind beweegt, buiten speelt en meer doet dan alleen wachten tot het wordt opgehaald.</p></article>
         <article class="fit"><h3>Praktisch gemak</h3><p>Je waardeert duidelijke tarieven, eten tijdens de opvang en bij NSO de optie om ophalen te regelen.</p></article>
@@ -341,7 +361,7 @@
 
   <section class="section white">
     <div class="wrap">
-      <div class="visit-card">
+      <div class="visit-card reveal">
         <div>
           <p class="kicker" style="color:#f5d575">Eerst even kijken?</p>
           <h2>Kom kennismaken met Cura Kids.</h2>
@@ -361,7 +381,7 @@
         <p class="kicker">Zo werkt het</p>
         <h2>In drie simpele stappen.</h2>
       </div>
-      <div class="steps">
+      <div class="steps reveal">
         <article class="step"><div class="step-num">1</div><h3>Stuur een bericht</h3><p>Vertel kort welke opvang je zoekt en voor welke leeftijd.</p></article>
         <article class="step"><div class="step-num">2</div><h3>Maak kennis</h3><p>Bespreek je vragen en kijk of Cura Kids goed voelt voor jouw gezin.</p></article>
         <article class="step"><div class="step-num">3</div><h3>Kies wat past</h3><p>Kies daarna rustig de opvang en dagen die bij jullie week passen.</p></article>
@@ -377,7 +397,7 @@
         <p>Vergelijk eenvoudig de tarieven voor kinderdagverblijf en naschoolse opvang en kies wat het beste past bij jullie gezin.</p>
       </div>
 
-      <div class="prices">
+      <div class="prices reveal">
         <article class="price-card">
           <p class="price-label">Kinderdagverblijf</p>
           <h3>Hele dagen per maand</h3>
@@ -403,7 +423,7 @@
         </article>
       </div>
 
-      <div class="nso">
+      <div class="nso reveal reveal-delay-1">
         <p class="price-label">Naschoolse opvang</p>
         <h3>Met of zonder ophalen</h3>
         <div class="nso-grid">
@@ -436,7 +456,7 @@
         <span>Extra NSO halve dag: 35,-</span>
       </div>
 
-      <div class="price-help">
+      <div class="price-help reveal reveal-delay-2">
         <div>
           <strong>Niet zeker welk pakket past?</strong>
           <span>Stuur je gewenste dagen door. Cura Kids kan met je meedenken voordat je beslist.</span>
@@ -452,7 +472,7 @@
         <p class="kicker">Veelgestelde vragen</p>
         <h2>Wat ouders meestal eerst willen weten.</h2>
       </div>
-      <div class="faq">
+      <div class="faq reveal">
         <details><summary>Voor welke leeftijden is Cura Kids?</summary><p>Cura Kids biedt kinderdagverblijf en naschoolse opvang voor kinderen van 0 tot 7 jaar.</p></details>
         <details><summary>Wat doet mijn kind tijdens de opvang?</summary><p>De dag combineert vrij spel, buitenspelen, beweging en creatieve activiteiten zoals muziek, dans, theater en yoga.</p></details>
         <details><summary>Is eten inbegrepen?</summary><p>Warme maaltijden en tussendoortjes maken deel uit van de opvang.</p></details>
@@ -463,7 +483,7 @@
   </section>
 
   <section class="section white" id="inschrijving">
-    <div class="wrap signup">
+    <div class="wrap signup reveal">
       <div class="signup-copy">
         <p class="kicker">Kennismaking & inschrijving</p>
         <h2>Zullen we eerst kennismaken?</h2>
@@ -525,6 +545,16 @@
 </footer>
 
 <script>
+const revealObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+document.querySelectorAll(".reveal:not(.is-visible)").forEach(el=>revealObserver.observe(el));
+
 document.getElementById("signup-form").addEventListener("submit",function(e){
   e.preventDefault();
   const f=new FormData(e.currentTarget);
